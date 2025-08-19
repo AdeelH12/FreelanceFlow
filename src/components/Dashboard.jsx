@@ -8,7 +8,7 @@ function handleDeleteProject(id){
 
   console.log(id); 
 
-  fetch(`http://localhost:5000/projects/${id}`, {
+  fetch(`https://freelanceflow-twbh.onrender.com/projects/${id}`, {
     method: "DELETE",
   })
   .then(()=>{

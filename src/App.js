@@ -10,7 +10,7 @@ function App() {
 
   useEffect(()=>{
 
-    fetch("http://localhost:5000/projects")
+    fetch("https://freelanceflow-twbh.onrender.com/projects")
     .then(res => res.json())
     .then(data => setProjects(data))
     .catch(err => console.log(err))

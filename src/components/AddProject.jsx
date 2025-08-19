@@ -27,7 +27,7 @@ function AddProject({ handleAddProject }) {
 
 
 
-            fetch("http://localhost:5000/projects", {
+            fetch("https://freelanceflow-twbh.onrender.com/projects", {
 
                 method: "POST",
                 headers: {
