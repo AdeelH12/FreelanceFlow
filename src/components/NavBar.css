@@ -1,0 +1,136 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #222;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logo img {
+  height: 50px;     
+  width: auto;   
+  transition: height 0.3s ease;
+}
+
+
+.menu-toggle {
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #00aaff;
+}
+
+.profile-icon {
+  background-color: #444;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.profile-icon:hover {
+  background-color: #00aaff;
+}
+
+/* Responsive for tablets and below */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px; /* height of navbar */
+    right: 0;
+    height: calc(100vh - 60px);
+    width: 250px;
+    background-color: #222;
+    flex-direction: column;
+    align-items: start;
+    padding: 1.5rem 2rem;
+    gap: 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links li a {
+    font-size: 1.1rem;
+  }
+
+  .profile-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* On larger screens: show logo, optionally hide hamburger if you want full menu */
+@media (min-width: 601px) {
+  .logo {
+    display: block;
+  }
+  /* If you want to hide hamburger on large screens, uncomment next line */
+  /* .menu-toggle {
+    display: none;
+  } */
+}

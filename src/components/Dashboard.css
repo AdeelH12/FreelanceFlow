@@ -1,0 +1,65 @@
+/* Dashboard container styling */
+.user-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem auto;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Individual project card */
+.user-item {
+  background: #fff;
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  cursor: default;
+}
+
+/* Hover effect for each card */
+.user-item:hover {
+  box-shadow: 0 8px 24px rgba(0, 170, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Project detail labels */
+.user-item p {
+  font-size: 1rem;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Highlight labels for keys */
+.user-item p::before {
+  font-weight: 700;
+  color: #00aaff;
+}
+
+/* Responsive typography for smaller devices */
+@media (max-width: 480px) {
+  .user-item p {
+    font-size: 0.9rem;
+  }
+
+  .user-list {
+    padding: 0 1rem;
+  }
+}
+
+/* Style for no projects message */
+.user-list + p,
+p {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #666;
+  margin-top: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
